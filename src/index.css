@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+    padding: 20px;
+}
+
+button {
+    margin-right: 10px;
+}

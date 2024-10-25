@@ -1,0 +1,8 @@
+
+
+h1 {
+    @apply tw-text-4xl tw-font-bold;
+}
+.container-example {
+    @apply tw-space-y-5
+}
