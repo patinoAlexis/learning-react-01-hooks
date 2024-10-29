@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Message } from "./Message.jsx";
 
 export const SimpleForm = () => {
   const [formState, setFormState] = useState({
@@ -16,8 +17,8 @@ export const SimpleForm = () => {
   };
 
   useEffect(() => {
-    console.log("useEffect");
-    console.log("userName", formState);
+    // console.log("useEffect");
+    // console.log("userName", formState);
   }, [formState]);
   return (
     <>
@@ -30,6 +31,7 @@ export const SimpleForm = () => {
         value={userName}
         onChange={onInputChange}
       />
+      {userName === "alexis" && <Message />}
       <input
         type="email"
         className="form-control tw-mt-4"
