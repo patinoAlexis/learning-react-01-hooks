@@ -1,20 +1,20 @@
-import { useEffect } from "react";
 import { Message } from "./Message.jsx";
 import { useForm } from "../hooks/useForm.jsx";
 
 export const FormWithCustomHook = () => {
-  const { userName, email, password, formState, onInputChange } = useForm({
-    userName: "alexis",
-    email: "alexis@hola",
+  const { userName, email, password, onInputChange, onReset } = useForm({
+    userName: "",
+    email: "",
     password: "",
   });
 
   // const { userName, email, password } = formState;
 
-  useEffect(() => {
-    // console.log("useEffect");
-    // console.log("userName", formState);
-  }, [formState]);
+  // useEffect(() => {
+  //   // console.log("useEffect");
+  //   // console.log("userName", formState);
+  // }, [formState]);
+
   return (
     <>
       <h1>Simple form</h1>
@@ -43,6 +43,10 @@ export const FormWithCustomHook = () => {
         value={password}
         onChange={onInputChange}
       />
+
+      <button onClick={onReset} className="btn btn-primary tw-mt-5">
+        reset
+      </button>
     </>
   );
 };

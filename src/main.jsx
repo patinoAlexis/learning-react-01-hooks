@@ -1,13 +1,14 @@
 import { createRoot } from "react-dom/client";
 import "./index.css";
 import { StrictMode } from "react";
-import { FormWithCustomHook } from "./02-useEffect/FormWithCustomHook.jsx";
+import { MultipleCustomHook } from "./03-useFetch/MultipleCustomHook.jsx";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     {/*// <HooksApp />*/}
     {/*// <CounterApp />*/}
     {/*<SimpleForm />,*/}
-    <FormWithCustomHook />
+    {/*<FormWithCustomHook />*/}
+    <MultipleCustomHook />
   </StrictMode>,
 );
