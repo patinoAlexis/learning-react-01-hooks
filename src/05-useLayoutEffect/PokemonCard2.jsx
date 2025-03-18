@@ -1,12 +1,13 @@
-import {useLayoutEffect, useRef} from "react";
+import { useLayoutEffect, useRef } from "react";
+import PropTypes from "prop-types";
 
 export const PokemonCardLayoutEffect = ({ id, name, sprites = [] }) => {
-    const titlePageRef = useRef();
-    useLayoutEffect(() => {
-        if(!titlePageRef?.current) return;
-        const {height, width} = titlePageRef.current.getBoundingClientRect();
-        console.log(height, width);
-    }, []);
+  const titlePageRef = useRef();
+  useLayoutEffect(() => {
+    if (!titlePageRef?.current) return;
+    const { height, width } = titlePageRef.current.getBoundingClientRect();
+    console.log(height, width);
+  }, []);
   return (
     <>
       <section className="tw-flex tw-h-52 tw-flex-row">
@@ -28,4 +29,10 @@ export const PokemonCardLayoutEffect = ({ id, name, sprites = [] }) => {
       </section>
     </>
   );
+};
+
+PokemonCardLayoutEffect.propTypes = {
+  id: PropTypes.number.isRequired,
+  name: PropTypes.string.isRequired,
+  sprites: PropTypes.arrayOf(PropTypes.string),
 };

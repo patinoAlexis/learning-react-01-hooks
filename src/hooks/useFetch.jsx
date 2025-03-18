@@ -13,9 +13,9 @@ export const useFetch = (url) => {
 
   useEffect(() => {
     setToLoading();
-    setTimeout(() => {
-      getFetch();
-    }, 300);
+    setTimeout(async () =>
+      getFetch()
+    , 300);
   }, [url]);
   const setToLoading = () => {
     setState({
