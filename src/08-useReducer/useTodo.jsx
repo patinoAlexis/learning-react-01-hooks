@@ -1,4 +1,4 @@
-import { useEffect, useReducer } from "react";
+import { useEffect, useReducer, useState } from "react";
 import { todoReducer } from "./todoReducer.js";
 
 const initTodoList = () => {
@@ -11,8 +11,10 @@ export const useTodo = () => {
     [], // JSON.parse(localStorage.getItem("todosList") || "[]")
     initTodoList,
   );
+  const [pendingToDo, setPendingToDo] = useState(0);
   useEffect(() => {
     localStorage.setItem("todosList", JSON.stringify(todoList || []));
+    setPendingToDo(todoList.filter((el) => !el.done).length);
   }, [todoList]);
 
   const deleteFromList = (item) => {
@@ -39,5 +41,6 @@ export const useTodo = () => {
     handleAddItem,
     handleToggleItem,
     deleteFromList,
+    pendingToDo,
   };
 };

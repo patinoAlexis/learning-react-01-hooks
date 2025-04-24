@@ -3,13 +3,18 @@ import { TodoAppFormAdd } from "./TodoAppFormAdd.jsx";
 import { useTodo } from "./useTodo.jsx";
 
 export const TodoApp = () => {
-  const { todoList, handleAddItem, handleToggleItem, deleteFromList } =
-    useTodo();
+  const {
+    todoList,
+    pendingToDo,
+    handleAddItem,
+    handleToggleItem,
+    deleteFromList,
+  } = useTodo();
 
   return (
     <>
       <h1 className="tw-text-3xl">
-        TodoApp ({10}), <small>pendientes: {2}</small>
+        TodoApp ({todoList.length}), <small>pendientes: {pendingToDo}</small>
       </h1>
       <div className="row">
         <div className="col-6 tw-m-2">
